@@ -5,7 +5,9 @@
   let value = "";
   let chosenOption;
   let price;
+  let agreed;
   $: console.log(value);
+  $: console.log(agreed);
 </script>
 
 <CustomInput bind:val={value} />
@@ -13,3 +15,8 @@
 <div> {chosenOption} </div>
 
 <input type="number" value={price} bind:value />
+
+<label>
+  <input type="checkbox" bind:checked={agreed} />
+  Aree to terms?
+</label>
