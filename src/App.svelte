@@ -6,8 +6,13 @@
   let chosenOption;
   let price;
   let agreed;
+  let favColor = "green";
+  let favColorCheck = ["green"];
+
   $: console.log(value);
   $: console.log(agreed);
+  $: console.log(favColor);
+  $: console.log(favColorCheck);
 </script>
 
 <CustomInput bind:val={value} />
@@ -19,4 +24,36 @@
 <label>
   <input type="checkbox" bind:checked={agreed} />
   Aree to terms?
+</label>
+
+<label>
+  <input type="radio" name="color" value="red" bind:group={favColor} />
+  Red
+</label>
+
+<label>
+  <input type="radio" name="color" value="green" bind:group={favColor} />
+  Green
+</label>
+<label>
+  <input type="radio" name="color" value="blue" bind:group={favColor} />
+  Blue
+</label>
+
+<label>
+  <input type="checkbox" name="color" value="red" bind:group={favColorCheck} />
+  Red
+</label>
+
+<label>
+  <input
+    type="checkbox"
+    name="color"
+    value="green"
+    bind:group={favColorCheck} />
+  Green
+</label>
+<label>
+  <input type="checkbox" name="color" value="blue" bind:group={favColorCheck} />
+  Blue
 </label>
