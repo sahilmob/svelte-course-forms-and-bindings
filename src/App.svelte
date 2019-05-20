@@ -1,5 +1,12 @@
 <script>
+  import CustomInput from "./CustomInput.svelte";
+  import Toggle from "./Toggle.svelte";
 
+  let value = "";
+  let chosenOption;
+  $: console.log(value);
 </script>
 
-<h1>Bindings & Forms</h1>
+<CustomInput bind:val={value} />
+<Toggle bind:chosenOption />
+<div> {chosenOption} </div>
