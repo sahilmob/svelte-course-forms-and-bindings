@@ -8,11 +8,13 @@
   let agreed;
   let favColor = "green";
   let favColorCheck = ["green"];
+  let favColorSelect = "green";
 
   $: console.log(value);
   $: console.log(agreed);
   $: console.log(favColor);
   $: console.log(favColorCheck);
+  $: console.log(favColorSelect);
 </script>
 
 <CustomInput bind:val={value} />
@@ -57,3 +59,9 @@
   <input type="checkbox" name="color" value="blue" bind:group={favColorCheck} />
   Blue
 </label>
+
+<select bind:value={favColorSelect}>
+  <option value="green">green</option>
+  <option value="blue">blue</option>
+  <option value="red">red</option>
+</select>
