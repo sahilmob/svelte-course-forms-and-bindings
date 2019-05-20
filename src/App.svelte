@@ -9,20 +9,23 @@
   let favColor = "green";
   let favColorCheck = ["green"];
   let favColorSelect = "green";
-  let usernameInput
+  let usernameInput;
+  let customInput;
 
   $: console.log(value);
   $: console.log(agreed);
   $: console.log(favColor);
   $: console.log(favColorCheck);
   $: console.log(favColorSelect);
+  $: console.log(customInput);
 
-  function saveData(){
-    console.log(usernameInput.value)
+  function saveData() {
+    console.log(usernameInput.value);
+    customInput.empty();
   }
 </script>
 
-<CustomInput bind:val={value} />
+<CustomInput bind:val={value} bind:this={customInput} />
 <Toggle bind:chosenOption />
 <div> {chosenOption} </div>
 
@@ -71,5 +74,5 @@
   <option value="red">red</option>
 </select>
 
-<input type="text" bind:this={usernameInput}/>
+<input type="text" bind:this={usernameInput} />
 <button on:click={saveData}>Save</button>
