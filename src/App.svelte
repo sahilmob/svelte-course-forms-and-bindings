@@ -9,12 +9,17 @@
   let favColor = "green";
   let favColorCheck = ["green"];
   let favColorSelect = "green";
+  let usernameInput
 
   $: console.log(value);
   $: console.log(agreed);
   $: console.log(favColor);
   $: console.log(favColorCheck);
   $: console.log(favColorSelect);
+
+  function saveData(){
+    console.log(usernameInput.value)
+  }
 </script>
 
 <CustomInput bind:val={value} />
@@ -65,3 +70,6 @@
   <option value="blue">blue</option>
   <option value="red">red</option>
 </select>
+
+<input type="text" bind:this={usernameInput}/>
+<button on:click={saveData}>Save</button>
